@@ -5,6 +5,7 @@
     "type": "library",
     "license": "MIT",
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "authors": [
         {
             "name": "Bartłomiej Stec"
@@ -16,7 +17,17 @@
         }
     },
     "require": {
-        "illuminate/support": "^10.0 || ^11.0 || ^12.0"
+        "illuminate/support": "^10.0 || ^11.0 || ^12.0 || ^13.0"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Barstec\\Cashbill\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5",
+        "orchestra/testbench": "^8.0 || ^9.0 || ^10.0",
+        "guzzlehttp/guzzle": "^7.0"
     },
     "extra": {
         "laravel": {
@@ -27,5 +38,10 @@
                 "Cashbill": "Barstec\\Cashbill\\CashbillFacade"
             }
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test:unit": "vendor/bin/phpunit --testsuite=Unit",
+        "test:integration": "vendor/bin/phpunit --testsuite=Integration"
     }
 }

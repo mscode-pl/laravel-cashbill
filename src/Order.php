@@ -61,7 +61,6 @@ class Order extends Cashbill
 
     protected function createPaymentDetails(array $cashbillResponse): PaymentDetails
     {
-        //dd($cashbillResponse);
         $paymentDetails = new PaymentDetails();
         $paymentDetails->setOrderId($this->orderId);
         $paymentDetails->setPaymentChannel($cashbillResponse['paymentChannel']);
